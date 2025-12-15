@@ -103,9 +103,6 @@ char *copyString(char *s) {
     return t;
 }
 
-/* ============================================================
- *  GERAÇÃO AST EM DOT/PNG (com arestas rotuladas e sibling=next)
- * ============================================================ */
 
 static int nodeCounter = 0;
 static FILE *dotFile = NULL;
