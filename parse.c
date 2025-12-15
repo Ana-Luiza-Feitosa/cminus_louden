@@ -168,7 +168,6 @@ TreeNode *declaration(void) {
             t->attr.name = identifier;
         }
     } else {
-        /* ===== CORREÇÃO: não sobrescrever IntegerArray ===== */
         t = var_declaration();
         if (t != NULL) {
             /* var_declaration() já define IntegerArray quando vê [NUM] */
@@ -177,7 +176,6 @@ TreeNode *declaration(void) {
             } else {
                 /* array em C- deve ser int; se vier void, pode acusar (opcional) */
                 if (type == Void) {
-                    /* você pode manter como erro semântico depois; aqui é opcional */
                     /* syntaxUnexpectedExpectedStr("tipo 'int' para array"); */
                 }
             }
@@ -191,8 +189,6 @@ TreeNode *declaration(void) {
 TreeNode *var_declaration(void) {
     TreeNode *t = newStmtNode(VarDeclK);
 
-    /* Por padrão, o tipo será definido em declaration().
-       Aqui só muda pra IntegerArray quando for array. */
     if (token == LBRACKET) {
         match(LBRACKET);
 
@@ -343,7 +339,6 @@ TreeNode *statement(void) {
     return t;
 }
 
-/* ===== CORREÇÃO: não aceitar "ID ;" como statement ===== */
 TreeNode *expression_stmt(void) {
     TreeNode *t = NULL;
 
