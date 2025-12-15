@@ -1,0 +1,6 @@
+*.o
+cminus
+*.out
+*.png
+*.exe
+*.dot
