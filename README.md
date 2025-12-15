@@ -65,17 +65,88 @@ A estrutura do projeto é composta pelas seguintes etapas e módulos:
 
 ### Execução
 
-No terminal, navegue até a pasta do projeto e execute:
+#### 1) Instalar o Graphviz (para gerar a AST)
 
+**Windows:**  
+Instale o Graphviz e verifique se o comando `dot` funciona:
+```bash
+dot -V
+```
+
+**Linux (Debian/Ubuntu):**
+```bash
+sudo apt-get update
+sudo apt-get install graphviz
+dot -V
+```
+
+**Linux (Red Hat/CentOS/Fedora):**
+```bash
+sudo yum install graphviz
+dot -V
+```
+
+**macOS (Homebrew):**
+```bash
+brew install graphviz
+dot -V
+```
+
+#### 2) Clonar o repositório
+
+No terminal, clone o repositório e entre na pasta do projeto:
+```bash
+git clone https://github.com/seuusuario/compilador-cminus.git
+cd compilador-cminus
+```
+
+#### 4) Compilar o projeto
+
+No terminal, navegue até a pasta do projeto e execute:
 ```bash
 mingw32-make
 ```
-ou 
+
+ou
 ```bash
+make clean
 make
 ```
-A'pos isso, para rodar um arquvo com teste de exemplo, execute:
+
+Isso irá gerar o executável `cminus` (ou `cminus.exe` no Windows).
+
+#### 4) Executar o compilador (arquivo de teste .cm)
+
+Após compilar, para rodar um arquivo `.cm`:
 ```bash
-./cminus.exe ./nome_do_arquivo_teste.cm
+./cminus nome_do_arquivo_teste.cm
 ```
 
+Exemplo (caso exista `test.cm` no projeto):
+```bash
+./cminus test.cm
+```
+
+#### 5) Gerar a imagem da AST (Graphviz)
+
+Após executar o compilador, será gerado um arquivo `.dot` (ex.: `test.dot`). Converta o `.dot` para imagem `.png` com:
+```bash
+dot -Tpng test.dot -o test_ast.png
+```
+
+#### 6) Visualizar a imagem gerada
+
+**Windows:**
+```bash
+start test_ast.png
+```
+
+**macOS:**
+```bash
+open test_ast.png
+```
+
+**Linux:**
+```bash
+xdg-open test_ast.png
+```
