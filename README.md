@@ -1,16 +1,3 @@
-# Desenvolvimento de um Compilador para a Linguagem C-
---------------
-
-Apresentado à Universidade Federal de São Paulo como parte dos requisitos para aprovação na disciplina de Compiladores.   
-Docente: Prof. Dr. Rodrigo Colnago Contreras
-
-## Discentes  
-<p>
-Ana Luiza Antonio Feitosa (RA: 168517)  <br>
-Larissa Martins Sá (RA: 168949)  <br>
-Marcella Fernandes Moraes (RA: 170982)  <br>
-  </p>
-
 # Desenvolvimento de um Compilador para a Linguagem C−
 
 Apresentado à Universidade Federal de São Paulo como parte dos requisitos para aprovação na disciplina de **Compiladores**.  
